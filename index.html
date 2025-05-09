@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amine Berriri - Software Engineer Student</title>
+  <link rel="stylesheet" href="cv.css" />
+  <link rel="icon" href="logo.png" type="image/x-icon" />
+  <style>
+    #cv-popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .cv-popup-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+    }
+    .cv-popup-content h3 {
+      margin-bottom: 15px;
+    }
+    .cv-popup-content button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <header>
+    <div class="profile-picture">
+      <img src="amine2.jpg" alt="Amine Berriri" />
+    </div>
+    <h1>Amine Berriri</h1>
+    <p>Software Engineer Student</p>
+  </header>
+
+  
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Amine Berriri, a passionate software engineering student. I have a strong educational background, having studied at <strong>Pioneer Prep School</strong> and currently pursuing my degree at <strong>Horizon School of Digital Technologies</strong>, one of the best colleges in Tunisia. I'm dedicated to learning and building innovative solutions through code.
+    </p>
+  </section>
+
+  
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Programming Languages: HTML, CSS, JavaScript, React, C, C++, Java, Python </li>
+      <li>Web Development: Frontend & Backend</li>
+      <li>Problem Solving & Algorithms</li>
+      <li>Team Collaboration & Communication</li>
+    </ul>
+  </section>
+
+  
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Personal Portfolio Website</strong> - Built with HTML, CSS, and JavaScript.</li>
+      <li><strong>E-commerce Website</strong> - A group project for a college assignment.</li>
+      <li><strong>To-Do List App</strong> - A simple task management app.</li>
+    </ul>
+  </section>
+
+  
+  <section id="contact">
+    <h2>Contact & Links</h2>
+    <p>Feel free to reach out to me or check out my work:</p>
+
+    <button class="btn" onclick="showPopup()">Download My CV</button>
+    <button class="btn" onclick="window.open('https://www.facebook.com/profile.php?id=100011036197840')">Facebook</button>
+    <button class="btn" onclick="window.open('https://www.instagram.com/amine_berriri/')">Instagram</button>
+    <button class="btn" onclick="window.open('https://github.com/Amine04-code')">GitHub</button>
+    <button class="btn" onclick="window.open('https://linkedin.com/in/yourprofile')">LinkedIn</button>
+  </section>
+
+  
+  <div id="cv-popup">
+    <div class="cv-popup-content">
+      <h3>Choose CV Language</h3>
+      <button onclick="downloadCV('FR')">Français</button>
+      <button onclick="downloadCV('EN')">English</button><br/>
+      <button onclick="hidePopup()">Cancel</button>
+    </div>
+  </div>
+
+  
+  <footer>
+    <p>&copy; 2023 Amine Berriri. All rights reserved.</p>
+  </footer>
+
+  
+  <script>
+    function showPopup() {
+      document.getElementById('cv-popup').style.display = 'flex';
+    }
+
+    function hidePopup() {
+      document.getElementById('cv-popup').style.display = 'none';
+    }
+
+    function downloadCV(lang) {
+      const file = lang === 'FR' ? 'CV_Mohamed_Amine_Berriri_FR.pdf' : 'CV_Mohamed_Amine_Berriri_EN.pdf';
+      window.open(file, '_blank');
+      hidePopup();
+    }
+  </script>
+
+</body>
+</html>
